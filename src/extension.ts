@@ -1,28 +1,19 @@
-import { commands, window } from 'vscode';
+import * as vscode from 'vscode';
 import * as subwordNavigation from './commands';
 
-export function activate() {
-    commands.registerCommand(
-        'subwordNavigation.cursorSubwordLeft',
-        () => subwordNavigation.cursorSubwordLeft(window.activeTextEditor));
+export function activate(context: vscode.ExtensionContext) {
 
-    commands.registerCommand(
-        'subwordNavigation.cursorSubwordRight',
-        () => subwordNavigation.cursorSubwordRight(window.activeTextEditor));
+    const register = (commandId: string, command: (...args: any[]) => any) => {
+        const disposable = vscode.commands.registerCommand(commandId, command);
+        context.subscriptions.push(disposable);
+    };
 
-    commands.registerCommand(
-        'subwordNavigation.cursorSubwordLeftSelect',
-        () => subwordNavigation.cursorSubwordLeftSelect(window.activeTextEditor));
-
-    commands.registerCommand(
-        'subwordNavigation.cursorSubwordRightSelect',
-        () => subwordNavigation.cursorSubwordRightSelect(window.activeTextEditor));
-
-    commands.registerCommand(
-        'subwordNavigation.deleteSubwordLeft',
-        () => subwordNavigation.deleteSubwordLeft(window.activeTextEditor));
-
-    commands.registerCommand(
-        'subwordNavigation.deleteSubwordRight',
-        () => subwordNavigation.deleteSubwordRight(window.activeTextEditor));
+    register('subwordNavigation.cursorSubwordLeft', subwordNavigation.cursorSubwordLeft);
+    register('subwordNavigation.cursorSubwordRight', subwordNavigation.cursorSubwordRight);
+    register('subwordNavigation.cursorSubwordLeftSelect', subwordNavigation.cursorSubwordLeftSelect);
+    register('subwordNavigation.cursorSubwordRightSelect', subwordNavigation.cursorSubwordRightSelect);
+    register('subwordNavigation.deleteSubwordLeft', subwordNavigation.deleteSubwordLeft);
+    register('subwordNavigation.deleteSubwordRight', subwordNavigation.deleteSubwordRight);
 }
+
+export function deactivate() { }

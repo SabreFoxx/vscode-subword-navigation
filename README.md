@@ -15,3 +15,22 @@ subwordNavigation.cursorSubwordRightSelect
 subwordNavigation.deleteSubwordLeft
 subwordNavigation.deleteSubwordRight
 ```
+## Building
+```
+$ npm i
+$ npm run compile
+$ npm run package
+```
+
+# Installing
+For VSCodium:
+```
+codium --install-extension vscode-subword-navigation-1.3.0.vsix
+```
+
+For VS Code:
+```
+code --install-extension vscode-subword-navigation-1.3.0.vsix
+```
+
+Or you can install from the code editor GUI

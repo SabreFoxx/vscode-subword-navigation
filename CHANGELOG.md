@@ -1,3 +1,6 @@
+### 1.3.0
+* Changed default keybindings, modernize code, update instructions for manual installation
+
 ### 1.2.0
 * Added default keybindings in order to populate the new binding interface
 

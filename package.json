@@ -1,7 +1,7 @@
 {
     "name": "vscode-subword-navigation",
-    "version": "1.2.0",
-    "publisher": "ow",
+    "version": "1.3.0",
+    "publisher": "sabrefoxx",
     "displayName": "Subword Navigation",
     "description": "The missing code navigation feature.",
     "icon": "images/icon.png",
@@ -12,13 +12,13 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ow--/vscode-subword-navigation.git"
+        "url": "https://github.com/SabreFoxx/vscode-subword-navigation.git"
     },
     "bugs": {
         "url": "https://github.com/ow--/vscode-subword-navigation/issues"
     },
     "engines": {
-        "vscode": "0.10.x"
+        "vscode": "^1.75.0"
     },
     "categories": [
         "Other"
@@ -36,50 +36,50 @@
         "keybindings": [
             {
                 "command": "subwordNavigation.cursorSubwordRight",
-                "key": "alt+right",
+                "key": "ctrl+right",
                 "mac": "ctrl+right",
                 "when": "editorTextFocus"
             },
             {
                 "command": "subwordNavigation.cursorSubwordRightSelect",
-                "key": "alt+shift+right",
+                "key": "ctrl+shift+right",
                 "mac": "ctrl+shift+right",
                 "when": "editorTextFocus"
             },
             {
                 "command": "subwordNavigation.cursorSubwordLeft",
-                "key": "alt+left",
+                "key": "ctrl+left",
                 "mac": "ctrl+left",
                 "when": "editorTextFocus"
             },
             {
                 "command": "subwordNavigation.cursorSubwordLeftSelect",
-                "key": "alt+shift+left",
+                "key": "ctrl+shift+left",
                 "mac": "ctrl+shift+left",
                 "when": "editorTextFocus"
             },
             {
                 "command": "subwordNavigation.deleteSubwordLeft",
-                "key": "alt+backspace",
+                "key": "ctrl+backspace",
                 "mac": "ctrl+backspace",
                 "when": "editorTextFocus && !editorReadonly"
             },
             {
                 "command": "subwordNavigation.deleteSubwordRight",
-                "key": "alt+delete",
+                "key": "ctrl+delete",
                 "mac": "ctrl+delete",
                 "when": "editorTextFocus && !editorReadonly"
             }
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
+        "package": "vsce package",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
-        "@types/node": "^13.11.0",
-        "@types/vscode": "^1.43.0",
-        "typescript": "^3.8.3"
+        "@types/vscode": "^1.75.0",
+        "typescript": "^5.2.2",
+        "@vscode/vsce": "^2.22.0"
     }
 }

@@ -66,11 +66,11 @@ function char(c: string) {
 }
 
 function isUpper(c: string) {
-	return c === c.toUpperCase() && c !== c.toLowerCase();
+    return c === c.toUpperCase() && c !== c.toLowerCase();
 }
 
 function isLower(c: string) {
-	return c === c.toLowerCase() && c !== c.toUpperCase();
+    return c === c.toLowerCase() && c !== c.toUpperCase();
 }
 
 function isDigit(c: string) {
